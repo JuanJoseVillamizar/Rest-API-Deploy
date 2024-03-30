@@ -1,0 +1,35 @@
+###Recuperar todos los datos
+GET http://localhost:1234/movies
+
+###Recuperar un dato por ID
+GET http://localhost:3000/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
+###Recuperar los datos por genero
+GET http://localhost:3000/movies?genre=Action
+
+
+###Crear una pelicula con POST
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+  "title": "Bob Esponja",
+  "year": 2024,
+  "director": "Christopher Nolan",
+  "duration": 152,
+  "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sensacine.com%2Fpeliculas%2Fpelicula-54682%2F&psig=AOvVaw3nGHCesgRi_T-UndxxXEkw&ust=1705611650058000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCICO3Neo5YMDFQAAAAAdAAAAABAD",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+
+###Modificar una pelicula con PATCH
+PATCH http://localhost:3000/movies/6a360a18-c645-4b47-9a7b-2a71babbf3e0
+Content-Type: application/json
+
+{
+    "title": "Avatar",
+    "year":2009
+}
